@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ej 7, 8, 11</title>
+	<script type="text/javascript">
+		
+		
+		// ej 11
+		function check(){
+		var input = document.getElementById("numero").value;
+
+			if (input % 3 == 0 && input % 7 == 0) {
+				document.getElementById("resultat").innerHTML = " es divisible entre 3 i 7\n";
+		}else{
+			document.getElementById("resultat").innerHTML = "  no es divisible entre 7 i 3";
+		}}
+
+		/*
+		// ej 8
+		function check(){
+		var input = document.getElementById("numero").value;
+
+			if (input > 0) {
+				document.getElementById("resultat").innerHTML = " es positiu\n";
+			}else if (input = 0){
+				document.getElementById("resultat").innerHTML = "  es 0";
+			}else if (input < 0){
+				document.getElementById("resultat").innerHTML = "  es negatiu";
+		}
+		}
+
+		*//*falta  12 i corregir 8*/
+		// ej 11
+		/*function check(){
+			var num = document.getElementById("numero").value;
+			if(num<0){
+				num = num * (-1);
+			}
+			var long = num.length;
+			if(long<=4){
+				document.getElementById("resultat").innerHTML = "Long = "+ long;
+			}else{
+				document.getElementById("resultat").innerHTML = "long no valid"
+			}
+
+		}
+*/
+		//ej 12
+
+		/*function check(){
+			var num = document.getElementById("numero").value;
+			var long = num.length;
+			if (num < 0 || long > 5){
+				document.getElementById("resultat").innerHTML = "num no valid"
+			}else{
+				if(long == 1){
+					document.getElementById("resultat").innerHTML = "0000"+num;
+				}else if(long == 2){
+					document.getElementById("resultat").innerHTML = "000"+num;
+				}else if(long == 3){
+					document.getElementById("resultat").innerHTML = "00"+num;
+				}else if(long == 4){
+					document.getElementById("resultat").innerHTML = "0"+num;
+				}else if(long == 5){
+					document.getElementById("resultat").innerHTML = num;
+				}
+				}}*/
+
+	</script>
+</head>
+<body>
+		
+	<input id = numero type="text">
+	<button onclick="check()">Comprobar</button>
+
+	<p id = resultat> </p>
+</body>
+</html>

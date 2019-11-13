@@ -1,0 +1,148 @@
+// //////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////Logro 1 incrustar scripts sencillos en un HTML
+//<!DOCTYPE html>
+// <html>
+// <head>
+// 	<meta charset = utf-8>
+// 	<title></title>
+// 	<script type="text/javascript">
+// 		var x = 2;
+// 		var y = 1;
+//
+// 		if x % 2 == 0:
+// 			document.write("<h1>x = Par!<h1>");
+// 		else:
+// 			document.write("<h1>x = senar!<h1>");
+// 	</script>
+//
+//
+// </head>
+// <body>
+//
+// </body>
+// </html>
+// ///////////////////////////////////Logro 2 vincular un fichero js a un HTML
+// <!DOCTYPE html>
+// <html>
+// <head>
+// 	<meta charset = utf-8>
+// 	<title></title>
+// 	<script type="text/javascript" src="myjs.js">//src con ruta del JS
+//
+// 	</script>
+// </head>
+// <body>
+// 	<input id = numero type="text">
+// 	<button onclick="check()">Comprobar</button>
+//
+// 	<p id = resultat> </p>
+// </body>
+// </html>
+// /////////////////////////////////////////logro 3 resolver algoritmos sencillos usando condicionales
+// <!DOCTYPE html>
+// <html>
+// <head>
+// 	<meta charset = utf-8>
+// 	<title></title>
+// 	<script type="text/javascript">
+// 		var x = 2;
+// 		var y = 1;
+//
+// 		if x % 2 == 0:
+// 			document.write("<h1>x = Par!<h1>");
+// 		else:
+// 			document.write("<h1>x = senar!<h1>");
+// 	</script>
+//
+//
+// </head>
+// <body>
+//
+// </body>
+// </html>
+// /////////////////////////////////////////logro 4 resolver algoritmos sencillos usando bucles
+// <!DOCTYPE html>
+// <html>
+// <head>
+// 	<title>ej 12 bucles</title>
+// 	<script type="text/javascript">
+//
+// 		document.addEventListener("DOMContentLoaded",
+// 		function(event){
+// 			var i = 0;
+// 			var contador = 0;
+// 			var dado1 = 0;
+// 			var dado2 = 0;
+// 			for (i; i <= 99; i++) {
+// 				dado1 = Math.floor((Math.random()*6) + 1);
+// 				dado2 = Math.floor((Math.random()*6) + 1);
+// 				if (dado1+dado2==10){
+// 					contador += 1 ;
+// 				}
+// 				document.getElementById("dado1").innerHTML += dado1 + " - ";
+// 				document.getElementById("dado2").innerHTML += dado2 + " - ";
+// 				document.getElementById("suma").innerHTML += dado1 + dado2 + " - ";
+// 			}
+// 			document.getElementById("resultat").innerHTML = contador;
+// 		});
+// 	</script>
+// </head>
+// <body>
+//
+// <p id="dado1"></p>
+// <p id="dado2"></p>
+// <p id="suma"></p>
+// <p id="resultat"></p>
+// </body>
+// </html>
+// //////////////////////////////////////////////logro 5 resolver algoritmos utilizando condicionales, bucles y funciones
+// <!DOCTYPE html>
+// <html>
+// <head>
+// 	<title></title>
+// 	<script type="text/javascript">
+// 	var nameArray = [" Oscar ", " Mateo ", " Paco ", " Alba ", " Didac ", " Ferran ", " Rafa ", " Ruben ", " Joel ", " Almudena ", " Alexis ", " Marc ", " Roger ", " Andreu ", " Adrian ", " Saul ", " David ", "khalid"];
+// 	var copy = nameArray.slice();
+// 	var count = 0;
+// 		function group(){
+// 			//count++;
+// 			//document.getElementById("grup"+count).innerHTML = grup;
+// 			count++;
+// 			var texto = "";
+//
+// 			for (var i = 0;i<3;i++){
+// 				var randomIndex = Math.floor(Math.random()*copy.length);
+// 				var nombre = copy[randomIndex]
+// 				if (i == 0){
+// 					texto = "grupo "+ count + ": "+ nombre + ", ";
+// 				}else if (i == 1){
+// 					texto += nombre + ", ";
+// 				}else if (i == 2){
+// 					texto += nombre + ".";
+// 				}
+// 				copy.splice(randomIndex, 1);
+// 			}
+//
+// 			document.getElementById("grup"+count).innerHTML = texto;
+//
+//
+// 			}
+//
+// 		function reset(){
+// 		location.reload()
+// 		}
+//
+// 	</script>
+// </head>
+// <body>
+// 	<button onclick="group()">Generate Group</button>
+// 	<button onclick="reset()">Reset</button>
+// 	<h3 id="grup1"></h3>
+// 	<h3 id="grup2"></h3>
+// 	<h3 id="grup3"></h3>
+// 	<h3 id="grup4"></h3>
+// 	<h3 id="grup5"></h3>
+// 	<h3 id="grup6"></h3>
+// </body>
+// </html>
+// //////////////////////////////////////////////////////logro 6 comprende el flujo de ejecucion de un script

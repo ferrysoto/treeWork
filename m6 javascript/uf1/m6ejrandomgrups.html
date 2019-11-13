@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	var nameArray = [" Oscar ", " Mateo ", " Paco ", " Alba ", " Didac ", " Ferran ", " Rafa ", " Ruben ", " Joel ", " Almudena ", " Alexis ", " Marc ", " Roger ", " Andreu ", " Adrian ", " Saul ", " David ", "khalid"];
+	var copy = nameArray.slice();
+	var count = 0;
+		function group(){
+			//count++;
+			//document.getElementById("grup"+count).innerHTML = grup;
+			count++;
+			var texto = "";
+			
+			for (var i = 0;i<3;i++){
+				var randomIndex = Math.floor(Math.random()*copy.length);
+				var nombre = copy[randomIndex]
+				if (i == 0){
+					texto = "grupo "+ count + ": "+ nombre + ", ";
+				}else if (i == 1){
+					texto += nombre + ", ";
+				}else if (i == 2){
+					texto += nombre + ".";
+				}
+				copy.splice(randomIndex, 1);
+			}
+			
+			document.getElementById("grup"+count).innerHTML = texto;
+
+
+			}
+
+		function reset(){
+		location.reload()
+		}
+	
+	</script>
+</head>
+<body>
+	<button onclick="group()">Generate Group</button>
+	<button onclick="reset()">Reset</button>
+	<h3 id="grup1"></h3>
+	<h3 id="grup2"></h3>
+	<h3 id="grup3"></h3>
+	<h3 id="grup4"></h3>
+	<h3 id="grup5"></h3>
+	<h3 id="grup6"></h3>
+</body>
+</html>

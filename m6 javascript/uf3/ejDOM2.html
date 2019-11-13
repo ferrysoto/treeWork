@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      function crearOEliminar () {
+        var formulario = document.getElementsByTagName('form')[0];
+        for (var i = 0, length = formulario.length; i < length-1; i++) {
+          if (formulario[i].checked) {
+              if (formulario[i].value=='otro'){
+                crear(formulario);
+              }else if (formulario.getElementsByClassName('otros_input').length>0) {
+                eliminar(formulario);
+              }
+          }
+        }
+      }
+
+      function eliminar (formulario) {
+        var claseOtros= formulario.getElementsByClassName('otros_input');
+        var parentsNode;
+        var elements = claseOtros;
+            for (var i = 0;i > claseOtros.length; i++;) {
+              parentsNode.push(claseOtros[i].parentNode);
+            }
+            removeElements(parentsNode, elements)
+      }
+
+
+
+      function crear(formulario) {
+        var sumbit =formulario.lastElementChild;
+        formulario.lastElementChild.remove();
+
+        var labelEspecificar = document.createElement("label");
+        labelEspecificar.appendChild(document.createTextNode("Especificar:"));
+        labelEspecificar.className="otros_input";
+        formulario.appendChild(labelEspecificar);
+
+        var inputEspecificar = document.createElement("input");
+        inputEspecificar.type="text";
+        inputEspecificar.className="otros_input";
+        formulario.appendChild(inputEspecificar);
+
+        var saltoLinea = document.createElement("br");
+        saltoLinea.className="otros_input";
+        formulario.appendChild(saltoLinea);
+        formulario.appendChild(sumbit);
+      }
+      function createElementDOM(tagElement, text, parentNode){
+        if(text.length > 0){
+
+        }
+      }
+
+      function removeElements(parentsNode, elements){
+        for(var i = 0; i < parentsNode.length; i++;){
+          parentsNode[i].removeChild(elements[i]);
+
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="get" method="??" onchange="crearOEliminar()">
+      <label for="cursos" > Seleccionar curso:</label><br />
+      <input type="radio" name="cursos" value="html"> HTML<br />
+      <input type="radio" name="cursos" value="css"> CSS<br />
+      <input type="radio" name="cursos" value="otro"> Otro<br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ej 12 bucles</title>
+	<script type="text/javascript">
+		
+		document.addEventListener("DOMContentLoaded",
+		function(event){
+			var i = 0;
+			var contador = 0;
+			var dado1 = 0;
+			var dado2 = 0;
+			for (i; i <= 99; i++) {
+				dado1 = Math.floor((Math.random()*6) + 1);
+				dado2 = Math.floor((Math.random()*6) + 1);
+				if (dado1+dado2==10){
+					contador += 1 ;
+				}
+				document.getElementById("dado1").innerHTML += dado1 + " - ";
+				document.getElementById("dado2").innerHTML += dado2 + " - ";
+				document.getElementById("suma").innerHTML += dado1 + dado2 + " - ";
+			}
+			document.getElementById("resultat").innerHTML = contador;
+
+
+		});
+	</script>
+</head>
+<body>
+
+<p id="dado1"></p>
+<p id="dado2"></p>
+<p id="suma"></p>
+<p id="resultat"></p>
+</body>
+</html>

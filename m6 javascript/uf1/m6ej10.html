@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function factorial(){
+			var i = 1;
+			var input = document.getElementById("numero").value;
+			var resultat = 1;
+			for (i; i<=input; i++){
+				resultat = i*resultat;
+			}
+			document.getElementById("resultat").innerHTML = resultat;
+		}
+
+
+	</script>
+</head>
+	<body>
+		<input id = numero type="text">
+		<button onclick="factorial()">Comprobar</button>
+		<p id="resultat"></p>
+	</body>
+</html>
