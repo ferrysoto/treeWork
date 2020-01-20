@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>logro 4</title>
+  <script type="text/javascript">
+  //5 tiradas 2 d10
+    function numero(){
+      var pars = [];
+      document.getElementById("paragrafo").innerHTML = "";
+
+      for (var i = 0; i < 5; i++) {
+        var number = Math.floor(Math.random() * 10) + 1;
+        number += Math.floor(Math.random() * 10) + 1;
+
+        console.log(number);
+        if (number % 2 == 0) {
+          pars.push(number);
+        }
+      }
+
+      for (var j = 0; j < pars.length; j++) {
+        document.getElementById("paragrafo").innerHTML += pars[j] + " ";
+
+      }
+    }
+  </script>
+
+</head>
+<body>
+  <input onclick="numero()" type="button" value="get par d20">
+  <p id="paragrafo"> </p>
+</body>
+</html>

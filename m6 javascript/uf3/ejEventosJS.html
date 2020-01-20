@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>entrenando con eventos</title>
+  <script type="text/javascript">
+  //ejs del 1 al 6
+  document.addEventListener("DOMContentLoaded",main);
+
+  function main(){
+    var botones = document.getElementsByTagName("button");
+    var parrafos = document.getElementsByTagName("p");
+    var inputs = document.getElementsByTagName("input");
+    for (var i = 0; i < botones.length; i++) {
+      botones[i].addEventListener("click", resizeText);
+
+      //focusin focusout tambien sirve
+      botones[i].addEventListener("focus", focusText);
+      botones[i].addEventListener("blur", blurText);
+    }
+    for (var i = 0; i < parrafos.length; i++) {
+      parrafos[i].addEventListener("mouseover", colorParrafo);
+    }
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener("focus", focusText);
+      inputs[i].addEventListener("blur", blurText);
+    }
+
+  }
+
+  function focusText(e){
+    var element = e.srcElement;
+    element.style.backgroundColor= "green";
+    element.style.border = "solid 5px";
+  }
+  //blur es el antifocus, se necesitan el uno al otro sinó se queda el focus editado siempre
+  function blurText(e){
+    var element = e.srcElement;
+    element.style.backgroundColor= "";
+    element.style.border = "";
+  }
+
+  function resizeText(e){
+    var element = e.srcElement
+    if (element.innerText == "aumentar") {
+      aumentarTexto();
+    }else if(element.innerText == "disminuir"){
+      disminuirTexto();
+    }
+  }
+
+  function aumentarTexto(){
+    var parrafo = document.getElementsByTagName("p")[0];
+    var fuente = parrafo.style.fontSize;
+    fuente = parseFloat(fuente)+3 + "px";
+    parrafo.style.fontSize=fuente;
+  }
+  function disminuirTexto(){
+    var parrafo = document.getElementsByTagName("p")[0];
+    var fuente = parrafo.style.fontSize;
+    fuente = parseFloat(fuente)-3 + "px";
+    parrafo.style.fontSize=fuente;
+  }
+
+  function colorParrafo(){
+    document.body.style.background = getRandomColor();
+  }
+
+  function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+  </script>
+</head>
+<body>
+  <p style="font-size:12px">
+    "Esta es tu última oportunidad, después ya no podrás echarte atrás.
+    Si tomas la pastilla roja te quedarás en el país de las maravillas y
+    yo te enseñaré hasta donde llega la madriguera de conejos. Recuerda, lo único
+    que te ofrezco es la verdad, nada más."
+  </p>
+  <button>aumentar</button>
+  <button>disminuir</button>
+  <br/>
+  <input type="text" placeholder="nickname">
+  <input type="text" placeholder="desc">
+
+</body>
+</html>

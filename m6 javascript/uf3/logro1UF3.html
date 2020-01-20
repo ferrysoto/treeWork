@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Los videojuegos de 2020</title>
+    <meta charset="UTF-8">
+    <meta name="title" content="Los videojuegos de 2020">
+    <meta name="description" content="Descripción de la WEB">
+    <link href="http://dominio.com/hoja-de-estilos.css" rel="stylesheet" type="text/css"/>
+
+
+    <script type="text/javascript">
+
+      // Cuando la ventana cargue, llama a una función anónima para realizar los ejercicios:
+      window.addEventListener('load', function(){
+
+          // ################# LOGRO 1 ################# //
+
+          // ###### CONDICION 1 ###### //
+          // Sabiendo que el h1 que queremos modificar tiene como id "titulo":
+          document.getElementById('titulo').innerText = "Los videojuegos de AAA";
+
+          // ###### CONDICION 2 ###### //
+          // A partir de la obtención de todos los elementos con la clase ".navigation-link", recorro la lista para modificar 1 a 1 su HREF:
+          var navigations = document.getElementsByClassName('navigation-link'); // Siempre que algo empieza con getElements... se que obtengo un array de elementos.
+          for (var i = 0; i < navigations.length; i++) {
+            navigations[i].href = "https://www.google.es";
+          }
+
+          // ###### CONDICION 3 ###### //
+          // A partir de todos los elementos que tengan como name "paisaje", modifico su atributo alt con "Logro desbloqueado":
+          var images = document.getElementsByName('paisaje');
+          for (var i = 0; i < images.length; i++) {
+            images[i].alt = "Logro Desbloqueado";
+          }
+
+          // Si se pusiera más 'toca huevos', lo que hay hecho aquí arriba no es del todo correcto, porque estás buscando
+          // a partir de todos los elementos que tengan como name 'paisaje', si pusieras un button con name 'paisaje',
+          // también recogería ese elemento. Por lo tanto, para hacerlo exhaustivamente bien...
+
+          var images = document.getElementsByTagName('img');
+          for (var i = 0; i < images.length; i++) {
+            if(images[i].name === "paisaje"){
+              images[i].alt = "Logro Desbloqueado";
+            }
+          }
+
+          // De está forma, estas asegurando que solo a partir de las imagenes que tengan como name 'paisaje' sean modificadas con el alt 'Logro desbloqueado'
+          // por lo que si en este caso hubiera otros elementos con el name 'paisaje', como un button, no cambiarían su estado ni atributos, pero este es un caso
+          // muy extremista :)
+
+          // ################# LOGRO 2 ################# //
+
+          // ###### CONDICION 1 ###### //
+          // Teniendo en cuenta que lo que queremos es modificar y obtener directamente el hijo directo de article...
+          var articles = document.getElementsByTagName('article'); // Primero obtengo todos los tags que sean de article, para a continuación recorrerlos como un array.
+          for (var i = 0; i < articles.length; i++) {
+            var p = articles[i].querySelector('p').innerText = "Alexis Mengual Vázquez";
+            // Por cada vuelta que de, buscamos todos los elementos que sean una p. (Puedes hacer un console.log para comprobarlo).
+            // querySelector lo que hace es que busca el primer elemento, en este caso p, que encuentre en article, por lo que puede que no sea
+            // la mejor solución a otros casos, ya que si la p que hay dentro del div que hay en article, estuviera por delante de la primera p que hay, este metodo ya no serviría.
+          }
+
+          // El ejemplo de arriba es la solucion rápida, la cual pues no aplique porque se me fue la pinza y empece a hacerlo con JQuery, sin tener ni cdns ni nada, pero yo super feliz con JQuery xd
+          // Esto último no tiene nada que ver pero yo lo pongo :)
+
+          // El siguiente ejemplo se acerca un poco más a la 'realidad', seleccionamos todas las p que tenemos en el HTML:
+          var pes = document.getElementsByTagName('p');
+
+          // Y las recorremos en busca de cual de todas ellas, tiene como padre directo a article:
+          for (var i = 0; i < pes.length; i++) {
+            if(pes[i].parentNode.nodeName == 'ARTICLE'){
+              // Si accedemos a este if, quiere decir que hemos encontrado la p, independientemente del posible problema del caso anterior
+              // con respecto al posicionamiento de esta p.
+              pes[i].innerText = "Alexis Mengual Vázquez";
+            }
+          }
+
+          // ################# LOGRO 3 ################# //
+
+          // ###### CONDICION 1 ###### //
+          // Este es el más fácil de hacer, pues puedes hacerlo de mil maneras, pero también se puede complicar porque puedes empezar a mezclar conceptos
+          // pero aquí lo haré como si fuera el Leandro.
+
+          // Primero, obtengo todas las p que hay en el HTML. (Voy a utilizar el del ejemplo anterior, el que está en la línea 67).
+          for (var i = 0; i < pes.length; i++) {
+            if(pes[i].innerText.includes('Me gusta mucho esta página.')){ // Busco la p que contenga el texto 'Me gusta mucho esta página'.
+              var parent = pes[i].parentNode; // Obtengo el padre de la p que contiene el texto buscado.
+
+              // Y empiezo a crear los elementos:
+              var ol = document.createElement('ol');
+              var liA = document.createElement('li');
+              var liB = document.createElement('li'); // podría hacerlo solo con un li, pero para que se vea mas claro el ejemplo lo hago con 2.
+
+              // Le añado los textos correspondientes con innerText, también podria crear un elemento de texto, pero es una chorrada -_('-')_-
+              liA.innerText = 'Elemento A';
+              liB.innerText = 'Elemento B';
+
+              // y añado los elementos li a su nodo padre, ol
+              ol.appendChild(liA);
+              ol.appendChild(liB);
+
+              // y lo mismo para el elemento lo, que lo añado en el aside.
+              parent.appendChild(ol);
+
+              // Como dice que lo tenemos que añadir despues de la p, con un appendChild no necesitamos hacer un insertBefore.
+            }
+          }
+
+      })
+
+
+
+      // creando evento para borrar un nombre
+
+
+      // var article = document.getElementsByTagName('article')[0];
+      //
+      //     var button = document.createElement('button');
+      //     button.value = "yeah boe";
+      //     button.innerText = "yeah boe";
+      //     button.setAttribute("onclick", "removeWithEvent()");
+      //     article.appendChild(button)
+      // })
+      //
+      //   function removeElement(parent, elem){
+      //       parent.removeChild(elem);
+      //   }
+      //
+      //   function removeWithEvent(){
+      //       var article = document.getElementsByTagName('article')[0];
+      //       article.removeChild(document.getElementsByTagName('p')[0]);
+      //   }
+
+    </script>
+
+  </head>
+  <body>
+    <header>
+      <h1 id="titulo">Los videojuegos de 2020</h1>
+    </header>
+    <nav>
+      <a class="navigation-link" href="http://dominio.com/seccion2.html">Videojuegos 2018</a>
+      <a class="navigation-link" href="http://dominio.com/seccion2.html">Videojuegos 2019</a>
+    </nav>
+    <section>
+      <article>
+        <h2>CONTENIDO PRINCIPAL</h2>
+        <p>Este es el contenido principal de mi web</p>
+        <div>
+          <p>Aquí tenéis una imagen.</p>
+          <img src="http://dominio.com/imagen.jpg" alt="paisaje" name="paisaje">
+        </div>
+      </article>
+    </section>
+    <aside>
+      <h3>Banner de publicidad</h3>
+      <a href="http://dominio-externo.com">
+        <img src="http://dominio.com/banner-publicidad.png" alt="banner de publicidad">
+      </a>
+      <h3>Testimonios</h3>
+      <p>Me gusta mucho esta página.</p>
+    </aside>
+    <footer>
+      <h4>Avisos legales</h4>
+      <a href="http://dominio.com/aviso-legal">Política de cookies</a>
+      <h4>Redes sociales</h4>
+      <a href="http://facebook.com/mi-pagina-de-facebook">Mi Facebook</a>
+    </footer>
+  </body>
+</html>

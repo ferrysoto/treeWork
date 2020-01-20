@@ -1,0 +1,105 @@
+* {
+  margin:0px;
+  padding:0px;
+}
+
+
+header {
+  margin:0 auto;
+  width:100%;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align:center;
+  background-color:#40BED22B;
+}
+nav{
+  float:left;
+  width:100%;
+  overflow:hidden;
+}
+ul, ol {
+  list-style:none;
+}
+.clearfix {
+  background-color:#123;
+  display:block;
+}
+.menu > li {
+  float:left;
+  width:180px;
+  text-align: center;
+
+}
+
+.menu li a {
+  background-color:#123;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+  width:180px;
+  text-align: center;
+}
+
+.menu li a:hover {
+  background-color:#434343;
+}
+
+.menu li ul {
+  display:none;
+  position:absolute;
+  min-width:200px;
+}
+
+.menu li:hover > ul {
+  display:block;
+}
+
+.menu li ul li {
+  position:relative;
+}
+
+.menu li ul li ul {
+  right:-200px;
+  top:0px;
+}
+form{
+
+  float:right;
+}
+form > button, input{
+  margin-top:5px;
+  display:inline;
+}
+.pagination{
+  width:100%;
+  align-content:center;
+  background-color: #123;
+}
+.pagination > li{
+  display:inline-block;
+  margin: 0 auto;
+  width: 5%;
+  overflow:auto;
+}
+.pagination > li > a{
+  margin:0px;
+  text-decoration:none;
+  color: white;
+  text-align: center;
+  display:block;
+}
+.pagination > li > a:hover{
+  background-color:#333;
+}
+.print-only{
+  display:none;
+}
+
+p{
+  margin:1%;
+  width:90%;
+}
+footer{
+  text-align:center;
+  background-color:#40BED22B;
+}

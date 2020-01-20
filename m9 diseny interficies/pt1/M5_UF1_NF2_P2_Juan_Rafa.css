@@ -1,0 +1,148 @@
+* {
+  margin:0px;
+  padding:0px;
+}
+.clearfix:after {
+  height:0;
+  clear:both;
+  background-color:#fff;
+  display:block;
+  visibility:hidden;
+}
+
+aside, article, header,footer,section, main,nav{display:block;  margin-bottom:20px;}
+
+main{width:70%;  float:right;}
+main > div{padding:20px}
+main > div > img{width:100%}
+main > div>section > article > img{ width: 20%; float:left;}
+main > div>section > article> p{  width: 60%; float:right;}
+main > div>section > article > a{ float:right; margin-right:20px;}
+aside{  width:30%; float:left;}
+aside > div{  padding:20px;  margin-right:20px;}
+header {
+  margin:0 auto;
+  width:100%;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align:center;
+  background-color:#40BED22B;
+}
+
+section.most-popular-articles ul{
+  list-style: none;
+  margin:0;
+  padding:0;
+
+}
+section.most-popular-articles ul li{
+  margin:0;
+  padding:0;
+  width:33%;
+}
+section.most-popular-articles ul li:first-child{
+
+  width:34%;
+}
+section.most-popular-articles ul li article img{
+
+  width:100%;
+}
+
+
+
+nav{
+  float:left;
+  width:100%;
+  overflow:hidden;
+}
+ul, ol {
+  list-style:none;
+}
+
+.menu > li {
+  float:left;
+  width:180px;
+  text-align: center;
+
+}
+
+.menu li a {
+  background-color:#fff;
+  color:#000;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+  text-align: center;
+}
+
+.menu li a:hover {
+  background-color:#efefefef;
+}
+
+.menu li ul {
+  display:none;
+  position:absolute;
+  min-width:200px;
+}
+
+.menu li:hover > ul {
+  display:block;
+}
+
+.menu li ul li {
+  position:relative;
+}
+
+.menu li ul li ul {
+  right:-200px;
+  top:0px;
+}
+form{
+  float:right;
+}
+form > button, input{
+  margin-top:5px;
+  display:inline;
+}
+
+
+.print-only{
+  display:none;
+}
+.active > a{
+  background-color: #efefefef;
+  color: white;
+}
+ul > .pagination{
+  /* margin-left:20%; */
+}
+.pagination {
+width: 100%;
+float:right;
+margin:5% auto;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+
+
+a{
+  text-decoration: none;
+}
+footer{
+  text-align:center;
+  background-color:#40BED22B;
+  width:100%;
+}

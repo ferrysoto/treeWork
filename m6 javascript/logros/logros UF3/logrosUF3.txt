@@ -1,0 +1,47 @@
+1/////////////////Accede a elementos html por id, class y name//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Guia i restriccions:​ S’ha de realitzar HTML, CSS i javascript.
+No es pot utilitzar cap llibreriaexterna ni cap framework.Temps 15 minuts.Condició
+
+1.Donat el html (logro1UF3.html) canvia el contingut de l’etiqueta “h1” per “Losvideojuegos de NOM”
+accedint per id.Condició
+
+2.​ Canvia l’atribut “href” dels enllaços amb classe = “navigation-link”
+per“​http://www.google.com​”Condició
+
+3.​ Accedeix a la imatge amb name=”paisaje” i canvia l’atribut
+“alt” per “logrodesbloqueado
+
+
+2/////////////////Localiza y filtra elementos html///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Guia i restriccions:​ S’ha de realitzar HTML, CSS i javascript. No es pot utilitzar
+cap llibreriaexterna ni cap framework.Temps 10 minuts.Condició
+
+1.​ Donat l’html (logro1UF3.html)
+filtra les etiquetes p que siguin fills directes del’etiqueta “article” i canvia el text per el teu nom i cognom
+
+3/////////////////Crea elementos html y los añade a la página en el lugar adecuado///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Guia i restriccions:​ S’ha de realitzar HTML, CSS i javascript. No es pot utilitzar cap llibreriaexterna ni cap framework.Temps 15 minuts.Condició
+
+1.​ Donat l’html (logro1UF3.html) crea una llista ordenada de dos elements(ElementA, ElementB) just darrere del
+paràgraf amb el texte: “Me gusta mucho esta página”
+
+
+4/////////////////Modifica y Elimina elementos html///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Guia i restriccions:​ S’ha de realitzar HTML, CSS i javascript.
+ No es pot utilitzar cap llibreriaexterna ni cap framework.Temps 15 minuts.Condició
+
+ 1.​ Donat el html (logro1UF3.html)
+ modifica el text de l’enllaç de “Mi facebook” per“Mi twitter” i l’href de l’enllaç per
+“​http://twitter.com/mi-pagina-de-twitter​”. Esborra el títol il’enllaç de “Avisos legales”
+
+
+5/////////////////crea y elimina eventos html(clic, load,change)///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Guia i restriccions:​ S’ha de realitzar HTML, CSS i javascript.
+No es pot utilitzar cap llibreriaexterna ni cap framework.Temps 15 minuts.Condició
+
+1.​ Donat el html (logro1UF3.html) quant el DOM estigui totalment carregat afegeixl’event click al element h3. En fer click al títol h3 s’ha de ocultar/mostrar el paràgraf amb eltexte “Me gusta mucho esta página”.
+Això ha de funcionar 3 cops, una vegada passat els 3cops s’ha d’eliminar l’event click

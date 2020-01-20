@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Los videojuegos de 2020</title>
+    <meta charset="UTF-8">
+    <meta name="title" content="Los videojuegos de 2020">
+    <meta name="description" content="Descripción de la WEB">
+    <link href="http://dominio.com/hoja-de-estilos.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript">
+      window.addEventListener('load', function(){
+          // //logro1
+          // //condicion 1
+          // document.getElementById('titulo').innerText = "Los videojuegos de Juan";
+          //
+          // //condicion 2
+          // var navigations = document.getElementsByClassName('navigation-link');
+          // for (var i = 0; i < navigations.length; i++) {
+          //   navigations[i].href = "";
+          // }
+          //
+          // //condicion 3
+          // var images = document.getElementsByTagName('img');
+          // for (var i = 0; i < images.length; i++) {
+          //   if(images[i].name === "paisaje"){
+          //     images[i].alt = "Logro Desbloqueado";
+          //   }
+          // }
+
+          // // logro 2
+          // // var pes = document.getElementsByTagName('p');
+          // //
+          // // for (var i = 0; i < pes.length; i++) {
+          // //   if(pes[i].parentNode.parentNode.nodeName == 'ARTICLE'){
+          // //     pes[i].innerText = "Rafa Juan Ferragut";
+          // //   }
+          // // }
+
+
+          // // logro 3
+          // // var pes = document.getElementsByTagName('p');
+          // //
+          // // for (var i = 0; i < pes.length; i++) {
+          // //   if(pes[i].innerText.includes('Me gusta mucho esta página.')){
+          // //     var parent = pes[i].parentNode;
+          // //     var table = document.createElement('table');
+          // //
+          // //     var trA = document.createElement('tr');
+          // //     var tdA = document.createElement('td');
+          // //     var trB = document.createElement('tr');
+          // //     var tdB = document.createElement('td');
+          // //
+          // //
+          // //     tdA.innerText = 'Elemento A';
+          // //     tdB.innerText = 'Elemento B';
+          // //
+          // //
+          // //     trA.appendChild(tdA);
+          // //     trB.appendChild(tdB);
+          // //
+          // //     table.appendChild(trA);
+          // //     table.appendChild(trB);
+          // //
+          // //     parent.appendChild(table);
+          // //
+          // //
+          // //   }
+          // // }
+
+
+          //logro 4
+          var footer = document.getElementsByTagName('footer')[0];
+
+          var as = document.getElementsByTagName('a');
+          for (var i = 0; i < as.length;i++){
+            if (document.getElementsByTagName('a')[i].innerText == "Mi Facebook"){
+              document.getElementsByTagName('a')[i].innerText = "Mi twitter";
+              document.getElementsByTagName('a')[i].href = "http://twitter.com/mi-pagina-de-twitter​";
+              // elimina avisos legales y link
+              for (var j = 0; j < footer.childNodes.length; j++) {
+                if (j==0 || j==1 || j==2 || j==3 ) {
+                  footer.removeChild(footer.childNodes[0]);
+                }
+
+              }
+
+            }
+          }
+
+          // function removeElement(parentNode, element){
+          //     parentNode.removeChild(element);
+          // }
+          // function rm(){
+          //     var footer = document.getElementsByTagName('footer');
+          //     var h4 = document.getElementsByTagName('h4');
+          //
+          //     removeElement(footer, footer.firstChild);
+          //     //removeElement(footer, footer.childNodes[0]);
+          // }
+
+
+
+          //logro 5
+
+          // var mg = docuemnt.getElementsByTagName("p")[2];
+          // var h3 = document.getElementsByTagName("h3")[0];
+          //
+          // h3.addEventListener("click", hideText);
+          //
+          // function hideText(e){
+          //   var element = e.srcElement;
+          //   var i = 0;
+          //   if (i == 1 || i == 3) {
+          //     mg.style.display = "none";
+          //     i++;
+          //   }else if(i == 2){
+          //     mg.style.display = "";
+          //     i++;
+          //   }
+          //   // }else if (i == 4){
+          //   //
+          //   // }
+          // }
+
+
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1 id="titulo" onclick="main()">Los videojuegos de 2020</h1>
+    </header>
+    <nav>
+      <a class="navigation-link" href="http://dominio.com/seccion2.html">Videojuegos 2018</a>
+      <a class="navigation-link" href="http://dominio.com/seccion2.html">Videojuegos 2019</a>
+    </nav>
+    <section>
+      <article>
+        <h2>CONTENIDO PRINCIPAL</h2>
+        <p>Este es el contenido principal de mi web</p>
+        <div>
+          <p>Aquí tenéis una imagen.</p>
+          <img src="http://dominio.com/imagen.jpg" alt="paisaje" name="paisaje">
+        </div>
+      </article>
+    </section>
+    <aside>
+      <h3>Banner de publicidad</h3>
+      <a href="http://dominio-externo.com">
+        <img src="http://dominio.com/banner-publicidad.png" alt="banner de publicidad">
+      </a>
+      <h3>Testimonios</h3>
+      <p>Me gusta mucho esta página.</p>
+    </aside>
+    <footer>
+      <h4>Avisos legales</h4>
+      <a href="http://dominio.com/aviso-legal">Política de cookies</a>
+      <h4>Redes sociales</h4>
+      <a href="http://facebook.com/mi-pagina-de-facebook">Mi Facebook</a>
+    </footer>
+  </body>
+</html>

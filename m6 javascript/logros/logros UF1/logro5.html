@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript">
+  //if par y primo calcular factorial
+  document.addEventListener('DOMContentLoaded', (event) =>{
+  });
+  function getContent() {
+    var num = document.getElementById("userInput").value;
+    par(num);
+  }
+
+  function par(num) {
+    if (num%2 == 0) {
+      document.getElementById("result1").innerHTML = num + " es Par";
+      if (esPrimo(num)==true){
+        // el único caso es el 2 ya que todos los demás pares són divisibles entre 2
+        document.getElementById("result3").innerHTML = factorialRecursivo(num)+"";
+      }
+    } else {
+      document.getElementById("result1").innerHTML = num + " es impar";
+      document.getElementById("result3").innerHTML = "";
+    }
+    primo(num);
+  }
+
+  function esPrimo(num) {
+    if (num<=1 || num%1) {
+      return false;
+    }
+    let m=Math.sqrt(num);
+    for (let i=2; i<=m; i++) {
+      if (num%i==0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function primo(num)
+  {
+    if (esPrimo(num)) {
+      document.getElementById("result2").innerHTML = num + " es Primo";
+    } else {
+      document.getElementById("result2").innerHTML = num + " no es Primo";
+    }
+  }
+  // function factorial (num) {
+  //   var total = 1;
+  //   for (i=1; i<=num; i++) {
+  //     total = total * i;
+  //   }
+  //   return total;
+  // }
+  function factorialRecursivo (n) {
+  if (n == 0){
+    return 1;
+  }
+  return n * factorialRecursivo (n-1);
+}
+
+  </script>
+</head>
+<body>
+  <!-- <h1>Logro 5</h1> -->
+  <p>
+    <label>Introduce un número: </label>
+    <input type="number" name="num" id="userInput">
+    <!-- Enviar datos recogidos a la función validate() -->
+    <input type="submit" onclick="getContent()" value="Comprobar">
+  </p>
+
+  <!-- Imprimir resultado que devuelve la función validate() -->
+  <p id="result1"></p>
+  <p id="result2"></p>
+  <p id="result3"></p>
+</body>
+</html>

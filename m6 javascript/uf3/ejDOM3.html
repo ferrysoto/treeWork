@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script type="text/javascript">
+  function addLi(){
+    if (document.getElementsByTagName('li').length >0){
+      var ul = document.getElementsByTagName('ul')[0];
+      // var li = document.getElementsByTagName('li')[0];
+      //
+      //li.innerText = 2*ul.lastElementChild.innerText;
+      // ul.appendChild(li);
+      createElementDOM('li', (2*ul.lastElementChild.innerText) + "", ul, [])
+    }else{
+      console.log("no funciona, para que cree valor a partir de la nada");
+      //createElementDOM('li', (2*1) + "", ul, []);
+    }
+
+  }
+
+  function rmLi(){
+      var ul = document.getElementsByTagName('ul')[0];
+      removeElement(ul, ul.lastElementChild);
+  }
+
+
+  function createElementDOM(tagElement, text, parentNode, attributes){
+    var element = document.createElement(tagElement);
+    if(text.length > 0){
+      var textElement = document.createTextNode(text);
+      element.appendChild(textElement);
+    }
+    parentNode.appendChild(element);
+
+    if(attributes.length > 0){
+      for (var i = 0; i < attributes.length; i++){
+        var att = attributes[i].split("=")[0];
+        var value = attributes[i].split("=")[1];
+        element.setAttribute(att, value);
+      }
+    }
+  }
+  function removeElement(parentNode, element){
+      parentNode.removeChild(element);
+  }
+//
+  function crear(){
+    var parent = document.getElementsByTagName('ul')[0];
+    var texto = (2*parent.lastElementChild.innerHTML)+"";
+    createElementDOM("li",texto,parent,["onclick=removeElement(this.parentNode,this)"])
+  }
+
+
+
+  </script>
+</head>
+<body>
+  <h2>Ayúdame a construirme</h2>
+  <ul>
+    <li onclick=removeElement(this.parentNode,this)>
+      2
+    </li >
+    <li onclick=removeElement(this.parentNode,this)>
+      4
+    </li>
+    <li onclick=removeElement(this.parentNode,this)>
+      8
+    </li>
+  </ul>
+  <!-- <input type="button" name="construir" onclick="addLi()" value="Construye"/> -->
+  <input type="button" name="construir" onclick="crear()" value="Construye"/>
+  <input type="button" name="borrar" onclick="rmLi()" value="Borra"/>
+</body>
+</html>
